@@ -1,0 +1,8 @@
+CREATE TYPE PRIORITY AS ENUM('low','medium','high');
+
+CREATE TABLE Requests(
+    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    priority PRIORITY NOT NULL,
+    request_date DATE NOT NULL
+);

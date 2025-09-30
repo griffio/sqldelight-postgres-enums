@@ -1,0 +1,4 @@
+CREATE TYPE COLORS AS ENUM ('red', 'purple', 'blue');
+
+ALTER TYPE COLORS RENAME VALUE 'purple' TO 'mauve';
+ALTER TYPE COLORS ADD VALUE 'orange' AFTER 'red';

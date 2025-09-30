@@ -1,0 +1,22 @@
+insert:
+INSERT INTO Requests(title, priority, request_date) VALUES (?, ?, ?) RETURNING *;
+
+select:
+SELECT *
+FROM Requests
+ORDER BY priority;
+
+selectByPriority:
+SELECT *
+FROM Requests
+WHERE priority = ?
+ORDER BY priority;
+
+selectMinPriority:
+SELECT * FROM Requests
+WHERE priority = (SELECT MIN(priority) FROM Requests);
+
+selectEnumValues:
+SELECT enum_range(NULL::PRIORITY) values,
+  enum_first(NULL::PRIORITY) first_value,
+  enum_last(NULL::PRIORITY)  last_value;

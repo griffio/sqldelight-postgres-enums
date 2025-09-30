@@ -1,0 +1,2 @@
+DROP TYPE IF EXISTS COLORS; -- only succeeds if there are no table columns using type
+
